@@ -1,20 +1,11 @@
 package main
 
-import (
-    "fmt"
-    "net/http"
-    "os"
-    )
+import "github.com/codegangsta/martini"
 
 func main() {
-  http.HandleFunc("/", hello)
-    fmt.Println("listening...")
-    err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
-    if err != nil {
-      panic(err)
-    }
-}
-
-func hello(res http.ResponseWriter, req *http.Request) {
-  fmt.Fprintln(res, "hello, world")
+    m := martini.Classic()
+           m.Get("/", func() string {
+                   return "Hello world!"
+                     })
+         m.Run()
 }
