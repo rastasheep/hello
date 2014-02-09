@@ -1,0 +1,5 @@
+{
+	"ImportPath": "github.com/rastasheep/hello",
+	"GoVersion": "go1.2",
+	"Deps": []
+}
